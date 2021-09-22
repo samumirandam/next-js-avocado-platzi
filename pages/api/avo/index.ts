@@ -1,16 +1,5 @@
 import { IncomingMessage, ServerResponse } from 'http'
 import DB from '@database'
-<<<<<<< HEAD
-
-const allAvos = async (request: IncomingMessage, response: ServerResponse) => {
-  const db = new DB()
-  const allEntries = await db.getAll()
-  const length = allEntries.length
-
-  response.statusCode = 200
-  response.setHeader('Content-type', 'application/json')
-  response.end(JSON.stringify({ data: allEntries, length }))
-=======
 import enablePublicAccess from '@cors'
 
 const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
@@ -36,7 +25,6 @@ const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
       JSON.stringify({ length: 0, data: [], error: 'Something went wrong' })
     )
   }
->>>>>>> 4-ui
 }
 
 export default allAvos
