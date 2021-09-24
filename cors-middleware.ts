@@ -1,5 +1,5 @@
 import corsWrapper from 'cors'
-import { RequestHandler } from 'express'
+// import { RequestHandler } from 'express'
 
 /**
  * Hey there you curious :)
@@ -15,7 +15,7 @@ const CORS_OPTIONS = {
   methods: ['GET', 'OPTIONS'],
 }
 
-function promisifyMiddleware(middleware: RequestHandler) {
+function promisifyMiddleware(middleware: any) {
   return (req: any, res: any) =>
     new Promise((resolve, reject) => {
       middleware(req, res, (result: Error | unknown) => {
